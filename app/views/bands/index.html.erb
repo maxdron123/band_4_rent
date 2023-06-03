@@ -1,0 +1,13 @@
+<h1>All Bands</h1>
+
+<% @bands.each do |band| %>
+  <div>
+    <h2><%= band.name %></h2>
+    <p>Genre: <%= band.genre %></p>
+    <p>Members Count: <%= band.members_count %></p>
+    <p>Description: <%= band.description %></p>
+    <p>Rate Fee: <%= band.rate_fee %></p>
+    <p>User: <%= band.user.email %></p>
+    <p><%= link_to 'View Details', band_path(band) %></p>
+  </div>
+<% end %>
