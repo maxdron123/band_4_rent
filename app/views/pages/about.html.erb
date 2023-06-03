@@ -1,2 +1,10 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<h1>About <%= @app_name %></h1>
+
+<p><%= @app_description %></p>
+
+<h2>Features:</h2>
+<ul>
+  <% @app_features.each do |feature| %>
+    <li><%= feature %></li>
+  <% end %>
+</ul>
