@@ -1,0 +1,11 @@
+<div class="container">
+<h1>Edit <%= @band.name %></h1>
+<%= simple_form_for @band do |f| %>
+<%=f.input :name %>
+<%=f.input :genre %>
+<%=f.input :members_count %>
+<%=f.input :description %>
+<%=f.input :rate_fee %>
+<%=f.submit class:'btn btn-primary'  %> <%= link_to 'Go back', bands_path, class:'btn btn-primary' %>
+<%end%>
+</div>
