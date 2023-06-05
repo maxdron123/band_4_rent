@@ -8,6 +8,7 @@
 <%=f.input :members_count, placeholder: '3', input_html: { class: "" }  %>
 <%=f.input :description, placeholder: 'Tell everybody about you', input_html: { class: "" } %>
 <%=f.input :rate_fee, input_html: { class: "" }  %>
+<%= f.input :photos, as: :file, input_html: {multiple: true} %>
 <div class="text-center"><%=f.submit class:'btn btn-dark'  %>  <%= link_to 'Go back', bands_path, class:'btn btn-dark' %></div>
 
 <%end%>
