@@ -1,11 +1,13 @@
-<div class="container">
-<h1>Edit <%= @band.name %></h1>
+<div class="container shadow p-3 mb-5 bg-body rounded p-5" style="width: 500px;">
+<h1 class="text-center">Edit <%= @band.name %></h1>
+
 <%= simple_form_for @band do |f| %>
 <%=f.input :name %>
 <%=f.input :genre %>
 <%=f.input :members_count %>
 <%=f.input :description %>
 <%=f.input :rate_fee %>
-<%=f.submit class:'btn btn-primary'  %> <%= link_to 'Go back', bands_path, class:'btn btn-primary' %>
+<div class="text-center"><%=f.submit class:'btn btn-dark'  %> <%= link_to 'Go back', bands_path, class:'btn btn-dark' %></div>
 <%end%>
+
 </div>
