@@ -1,12 +1,22 @@
 <h1><%= @band.name %></h1>
 
-<p><strong>Genre:</strong> <%= @band.genre %></p>
-<p><strong>Members Count:</strong> <%= @band.members_count %></p>
-<p><strong>Description:</strong> <%= @band.description %></p>
-<p><strong>Description:</strong> <%= @band.rate_fee %></p>
+
+<div class="band-container">
+  <% if @band.photos.attached? %>
+    <%@band.photos.each do |photo|  %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <% else %>
+    <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
+  <% end %>
+  <p><strong>Genre:</strong> <%= @band.genre %></p>
+  <p><strong>Members Count:</strong> <%= @band.members_count %></p>
+  <p><strong>Description:</strong> <%= @band.description %></p>
+  <p><strong>Rate Fee:</strong> <%= @band.rate_fee %> $</p>
+</div>
 <%= form_with(model: @band, method: :delete, local: true) do |form|%>
   <%= form.submit 'Delete Band', data: { confirm: 'Are you sure?' }%>
 <% end %>
-
 <%+ link_to "Edit Band", edit_band_path(@band), class:'btn btn-primary' %>
 <%+ link_to "All Bands", bands_path, class:'btn btn-primary' %>
+

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1>My bands</h1>
+    <%= link_to "Add new band", new_band_path, class:"btn btn-success", style:"border-radius: 10px; padding-top: 12px;" %>
+  </div>
+  <div class="row row-cols-3">
+  <% @bands.each do |band| %>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+        <% if band.photos.attached? %>
+            <%= cl_image_tag (band.photos[0].key) %>
+          <% else %>
+             <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
+        <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= band.name %></h5>
+            <p class="card-text"><%= band.description %></p>
+            <%= link_to "View details", band_path(band), class:"btn btn-primary" %>
+          </div>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>

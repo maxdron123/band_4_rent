@@ -8,6 +8,11 @@ class BandsController < ApplicationController
   def show
   end
 
+  def my_bands
+    @user = current_user
+    @bands = @user.bands
+  end
+
   def new
     @band = Band.new
     @user = current_user
@@ -47,6 +52,6 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :genre, :members_count, :description, :rate_fee)
+    params.require(:band).permit(:name, :genre, :members_count, :description, :rate_fee, photos: [])
   end
 end
