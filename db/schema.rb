@@ -26,16 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_211945) do
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
-  create_table "checkouts", force: :cascade do |t|
-    t.date "booking_date"
-    t.bigint "users_id", null: false
-    t.bigint "bands_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bands_id"], name: "index_checkouts_on_bands_id"
-    t.index ["users_id"], name: "index_checkouts_on_users_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,6 +41,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_30_211945) do
   end
 
   add_foreign_key "bands", "users"
-  add_foreign_key "checkouts", "bands", column: "bands_id"
-  add_foreign_key "checkouts", "users", column: "users_id"
 end
