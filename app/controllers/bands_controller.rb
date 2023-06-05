@@ -37,7 +37,7 @@ class BandsController < ApplicationController
 
   def destroy
     @band.destroy
-    redirect_to bands_path, notice: 'Band was successfully deleted!.'
+    redirect_to bands_path, status: :see_other, notice: 'Band was successfully deleted!.'
   end
 
   private

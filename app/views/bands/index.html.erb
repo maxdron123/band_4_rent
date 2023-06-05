@@ -8,6 +8,8 @@
     <p>Description: <%= band.description %></p>
     <p>Rate Fee: <%= band.rate_fee %></p>
     <p>User: <%= band.user.email %></p>
-    <p><%= link_to 'View Details', band_path(band) %></p>
+    <p><%= link_to 'View Details', band_path(band), class:'btn btn-primary' %></p>
   </div>
 <% end %>
+
+<%= link_to "New Band", new_band_path, class "btn btn-primary" %>
