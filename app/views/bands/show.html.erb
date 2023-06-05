@@ -14,9 +14,6 @@
   <p><strong>Description:</strong> <%= @band.description %></p>
   <p><strong>Rate Fee:</strong> <%= @band.rate_fee %> $</p>
 </div>
-<%= form_with(model: @band, method: :delete, local: true) do |form|%>
-  <%= form.submit 'Delete Band', data: { confirm: 'Are you sure?' }%>
-<% end %>
-<%+ link_to "Edit Band", edit_band_path(@band), class:'btn btn-primary' %>
-<%+ link_to "All Bands", bands_path, class:'btn btn-primary' %>
-
+<%= link_to "Delete band", band_path(@band), class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "Delete #{@band.name}?" } %>
+<%= link_to "Edit Band", edit_band_path(@band), class:'btn btn-primary' %>
+<%= link_to "All Bands", bands_path, class:'btn btn-primary' %>
