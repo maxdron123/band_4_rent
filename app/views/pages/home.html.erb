@@ -1,3 +1,26 @@
-<h1>Home Page</h1>
-<p> Welcome to our home page!</p>
-<%= link_to "About", about_path, class: "btn btn-primary" %>
+<div class="container-fluid">
+  <h1 class="text-center">Band 4 rent</h1>
+  <p class="border-bottom border-3 border-warning"> Latest added bands</p>
+  <div class="d-flex">
+    <div class="row row-cols-4 align-items-center">
+    <% @bands.each do |band| %>
+    <div class="col">
+        <div class="d-flex card" style="width: 18rem; height:20rem;">
+        <% if band.photos.attached? %>
+            <%= cl_image_tag (band.photos[0].key), class:"h-50" %>
+          <% else %>
+             <img class="h-50" src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
+        <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= band.name %></h5>
+            <p class="card-text"><%= band.description %></p>
+            <p class="card-price position-absolute bottom-0 start-5"><%= band.rate_fee %>$</p>
+            <%= link_to "View details", band_path(band), class:"btn btn-primary position-absolute bottom-0 end-0" %>
+          </div>
+        </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
+  <%= link_to "About", about_path, class: "btn btn-primary" %>
+</div>

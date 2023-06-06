@@ -1,21 +1,22 @@
-<div class="container">
+<div class="container text-center">
   <div class="d-flex justify-content-between">
     <h1>My bands</h1>
-    <%= link_to "Add new band", new_band_path, class:"btn btn-success", style:"border-radius: 10px; padding-top: 12px;" %>
+    <%= link_to "Add new band", new_band_path, class:"btn btn-warning", style:"border-radius: 10px; padding-top: 12px;" %>
   </div>
   <div class="row row-cols-3">
   <% @bands.each do |band| %>
     <div class="col">
-        <div class="card" style="width: 18rem;">
+        <div class="d-flex card" style="width: 18rem; height:20rem;">
         <% if band.photos.attached? %>
-            <%= cl_image_tag (band.photos[0].key) %>
+            <%= cl_image_tag (band.photos[0].key), class:"h-50" %>
           <% else %>
              <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
         <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= band.name %></h5>
             <p class="card-text"><%= band.description %></p>
-            <%= link_to "View details", band_path(band), class:"btn btn-primary" %>
+            <p class="card-price position-absolute bottom-0 start-5"><%= band.rate_fee %>$</p>
+            <%= link_to "View details", band_path(band), class:"btn btn-primary position-absolute bottom-0 end-0" %>
           </div>
         </div>
     </div>
