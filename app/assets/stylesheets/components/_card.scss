@@ -1,6 +1,19 @@
 .card {
   margin: 50px;
+  background-color: rgb(43, 41, 34);
+  color: goldenrod;
 }
 .card .card-price {
   font-weight: bold;
+}
+
+.border-warning-subtle {
+  opacity: 1.5;
+}
+
+.btn {
+  background-color: goldenrod;
+  &:hover {
+    background-color: gold;
+  }
 }

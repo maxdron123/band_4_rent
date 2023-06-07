@@ -11,3 +11,10 @@
 @import "components/index";
 @import "pages/index";
 @import "components/card";
+body {
+  background-image: url("https://img.freepik.com/free-vector/musical-notes-pattern-black-background_1017-32303.jpg?w=2000&t=st=1686139987~exp=1686140587~hmac=3113c8ec8b7759a89accb145165b9a626d1d4ef82074b889ee7fee4e293631d0");
+}
+body h1,
+p {
+  color: goldenrod;
+}
