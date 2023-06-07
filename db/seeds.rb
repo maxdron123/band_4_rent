@@ -10,3 +10,4 @@ puts "Cleaning database"
 Band.destroy_all
 
 puts "Creating bands"
+Band.create()
