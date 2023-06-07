@@ -41,9 +41,9 @@
     <div class="container text-center">
       <div class="d-flex justify-content-between">
         <div class="add-band-button">
-          <%= link_to "Add new band", new_band_path, class: "btn btn-dark", style: "border-radius: 10px; padding-top: 12px;" %>
+          <%= link_to "Add new band", new_band_path, class: "btn btn-warning", style: "border-radius: 10px; padding-top: 12px;" %>
         </div>
-        <h1 class="my-bands-heading">my bands</h1>
+        <h1 class="my-bands-heading text-warning">my bands</h1>
       </div>
       <div class="row row-cols-3 justify-content-center card-container">
         <% @bands.each do |band| %>
