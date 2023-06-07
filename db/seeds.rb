@@ -18,41 +18,43 @@ user1.save
 user2 = User.new(email: "test2@test.com", password: "123456", first_name: "Doyle", last_name: "Farrel")
 user2.save
 
-# Metallica
-metallicaphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148706/Tuite_Metallica_ChaseCenterSF_121921-82_sja0ab.webp")
-metallicaphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148704/Metallica_ck9p7j.webp")
-metallicaphoto3 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148703/3250_i8sajj.webp")
-metallica = Band.new(
-  name: "Metallica",
-  genre: "Trash Metal",
-  members_count: 4,
-  description: "Metallica is an American heavy metal band. The band was formed in 1981 in Los Angeles by vocalist and
-   guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career.",
-  rate_fee: 10_000
-)
-metallica.photos.attach(io: metallicaphoto1, filename: "metallica1.png", content_type: "image/png")
-metallica.photos.attach(io: metallicaphoto2, filename: "metallica2.png", content_type: "image/png")
-metallica.photos.attach(io: metallicaphoto3, filename: "metallica3.png", content_type: "image/png")
-metallica.user = user1
-metallica.save
+# # Metallica
+# metallicaphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148706/Tuite_Metallica_ChaseCenterSF_121921-82_sja0ab.webp")
+# metallicaphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148704/Metallica_ck9p7j.webp")
+# metallicaphoto3 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148703/3250_i8sajj.webp")
+# metallica = Band.new(
+#   name: "Metallica Reborn",
+#   genre: "Trash Metal",
+#   members_count: 4,
+#   description: "Metallica is an American heavy metal band. The band was formed in 1981 in Los Angeles by vocalist and
+#    guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career.",
+#   rate_fee: 10_000
+# )
+# metallica.photos.attach(io: metallicaphoto1, filename: "metallica1.png", content_type: "image/png")
+# metallica.photos.attach(io: metallicaphoto2, filename: "metallica2.png", content_type: "image/png")
+# metallica.photos.attach(io: metallicaphoto3, filename: "metallica3.png", content_type: "image/png")
+# metallica.user = user1
+# metallica.save
 
 # Imagine Dragons
-idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
-idband = Band.new(
-  name: "Imagine Dragons",
-  genre: "Pop Rock",
-  members_count: 4,
-  description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
-   Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
-   exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
-    Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
-     'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
-      of the year'.",
-  rate_fee: 12_000
-)
-idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
-idband.user = user1
-idband.save
+# idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686161916/imagined.jpg")
+# # idphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
+# idband = Band.new(
+#   name: "Imagine Dragons",
+#   genre: "Pop Rock",
+#   members_count: 4,
+#   description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
+#    Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
+#    exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
+#     Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
+#      'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
+#       of the year'.",
+#   rate_fee: 12_000
+# )
+# idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
+# # idband.photos.attach(io: idphoto2, filename: "imaginedragons2.png", content_type: "image/png")
+# idband.user = user1
+# idband.save
 
 # Skrillex
 skrillexphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149964/From_First_To_Last_-_Emo_Nite_2_-_PH_Carl_Pocket__cropped_nlgoko.jpg")
