@@ -16,7 +16,7 @@
         <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= band.name %></h5>
-            <p class="card-text"><%= band.description %></p>
+            <p class="card-text"><%= band.description.truncate(55, separator: ' ') %></p>
             <p class="card-price position-absolute bottom-0 start-5"><%= band.rate_fee %>$</p>
             <%= link_to "View details", band_path(band), class:"btn btn-primary position-absolute bottom-0 end-0" %>
           </div>
@@ -24,6 +24,5 @@
       </div>
       <% end %>
     </div>
-    <%= link_to "About", about_path, class: "btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" %>
   </div>
 </div>
