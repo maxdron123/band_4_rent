@@ -37,26 +37,26 @@ user2.save
 # metallica.save
 
 # Imagine Dragons
-# idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686161916/imagined.jpg")
-# # idphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
-# idband = Band.new(
-#   name: "Imagine Dragons",
-#   genre: "Pop Rock",
-#   members_count: 4,
-#   description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
-#    Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
-#    exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
-#     Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
-#      'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
-#       of the year'.",
-#   rate_fee: 12_000
-# )
-# idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
-# # idband.photos.attach(io: idphoto2, filename: "imaginedragons2.png", content_type: "image/png")
-# idband.user = user1
-# idband.save
+ idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686161916/imagined.jpg")
+  idphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
+ idband = Band.new(
+   name: "Imagine Dragons",
+   genre: "Pop Rock",
+   members_count: 4,
+   description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
+    Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
+    exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
+     Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
+      'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
+       of the year'.",
+   rate_fee: 12_000
+ )
+ idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
+  idband.photos.attach(io: idphoto2, filename: "imaginedragons2.png", content_type: "image/png")
+ idband.user = user1
+ idband.save
 
-# Skrillex
+ #Skrillex
 skrillexphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149964/From_First_To_Last_-_Emo_Nite_2_-_PH_Carl_Pocket__cropped_nlgoko.jpg")
 skrillex = Band.new(
   name: "Skrillex",
