@@ -1,27 +1,31 @@
 class BandsController < ApplicationController
   before_action :set_bands, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @bands = Band.all
+    @bands = policy_scope(Band).all
   end
 
   def show
+    authorize @band
   end
 
   def my_bands
     @user = current_user
     @bands = @user.bands
+    authorize @bands
   end
 
   def new
     @band = Band.new
-    @user = current_user
+    authorize @band
   end
 
   def create
     @user = current_user
     @band = Band.new(band_params)
     @band.user = @user
+    authorize @band
     if @band.save
       redirect_to band_path(@band)
     else
