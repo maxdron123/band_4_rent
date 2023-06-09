@@ -5,38 +5,14 @@
   <h1 class="text-center"><%= @band.name %></h1>
   <div class="container" style="width:600px">
   <% if @band.photos.attached? %>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <% if @band.photos.size === 1 %>
-      <div class="carousel-item active">
-        <%= cl_image_tag @band.photos[0].key, height: 300, width: 600, crop: :fill %>
-      </div>
-      <% elsif @band.photos.size >= 1 %>
-      <div class="carousel-item active">
-        <div class="text-center p-5" style="width: 600px; height: 300px; background-color: black;">
-        <span class="" style="color: white;">Click on side buttons to see photos or wait.</span></div>
-      </div>
+    <div class="overflow-auto d-inline-flex" style="width:600px">
       <% @band.photos.each do |photo|  %>
-
-      <div class="carousel-item">
-        <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill %>
-      </div>
-      <% end %>
+          <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill %>
       <% end %>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  </div>
     <% else %>
       <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
-    <% end %>
+  <% end %>
   <p class="mt-2"><strong>Genre:</strong> <%= @band.genre %></p>
   <p><strong>Members Count:</strong> <%= "🧍" * @band.members_count %></p>
   <p><strong>Description:</strong> <%= @band.description %></p>
