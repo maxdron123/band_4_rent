@@ -1,24 +1,52 @@
+<style>
+  .card {
+    min-height: 20rem;
+  }
+
+  .card-img-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-img-container:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .card-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
 <div class="container-fluid">
   <h1 class="text-center">Band 4 rent</h1>
   <div class="container-top d-flex border-bottom border-3 border-warning justify-content-between">
-    <p> Latest added bands</p>
+    <p>Latest added bands</p>
     <%= link_to "Browse all bands", bands_path, class:"btn btn-primary text-decoration-none" %>
   </div>
   <div class="d-flex">
-    <div class="row row-cols-4 align-items-center">
+    <div class="row row-cols-4 align-items-stretch">
       <% @bands.each do |band| %>
       <div class="col">
-        <div class="d-flex card border border-3 border-warning-subtle" style="width: 18rem; height:20rem;">
-        <% if band.photos.attached? %>
-            <%= cl_image_tag (band.photos[0].key), class:"h-50" %>
-          <% else %>
-             <img class="h-50" src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
-        <% end %>
-          <div class="card-body">
+        <div class="card border border-3 border-warning-subtle">
+          <div class="card-img-container">
+            <% if band.photos.attached? %>
+              <%= cl_image_tag(band.photos[0].key, class: "card-img img-fluid") %>
+            <% else %>
+              <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img img-fluid">
+            <% end %>
+          </div>
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= band.name %></h5>
             <p class="card-text"><%= band.description.truncate(55, separator: ' ') %></p>
-            <p class="card-price position-absolute bottom-0 start-5"><%= band.rate_fee %>$</p>
-            <%= link_to "View details", band_path(band), class:"btn btn-primary position-absolute bottom-0 end-0" %>
+            <p class="card-price"><%= band.rate_fee %>$</p>
+            <%= link_to "View details", band_path(band), class:"btn btn-primary mt-auto" %>
           </div>
         </div>
       </div>

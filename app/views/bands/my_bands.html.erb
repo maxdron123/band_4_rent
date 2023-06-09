@@ -10,7 +10,7 @@
           <div class="col">
             <div class="card" style="width: 18rem; height: 25rem;">
               <% if band.photos.attached? %>
-                <%= cl_image_tag (band.photos[0].key), class: "h-50 w-100" %>
+                <%= cl_image_tag (band.photos[0].key), class: "card-img img-fluid" %>
               <% else %>
                 <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img-top">
               <% end %>
