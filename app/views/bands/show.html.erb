@@ -5,14 +5,17 @@
   <h1 class="text-center"><%= @band.name %></h1>
   <div class="container" style="width:600px">
   <% if @band.photos.attached? %>
+
     <div class="overflow-auto d-inline-flex" style="width:600px">
       <% @band.photos.each do |photo|  %>
-          <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill %>
+          <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill, class: "card-img" %>
       <% end %>
     </div>
     <% else %>
-      <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
-  <% end %>
+
+      <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img">
+    <% end %>
+
   <p class="mt-2"><strong>Genre:</strong> <%= @band.genre %></p>
   <p><strong>Members Count:</strong> <%= "🧍" * @band.members_count %></p>
   <p><strong>Description:</strong> <%= @band.description %></p>

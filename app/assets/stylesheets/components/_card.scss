@@ -7,6 +7,12 @@
   font-weight: bold;
 }
 
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .border-warning-subtle {
   opacity: 1.5;
 }
