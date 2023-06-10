@@ -3,7 +3,12 @@ class BandsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @bands = policy_scope(Band).all
+      if params[:query].present?
+        @bands = policy_scope(Band).search_by_something(params[:query])
+      else
+        @bands = policy_scope(Band).all
+      end
+
   end
 
   def show

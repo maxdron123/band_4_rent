@@ -20,6 +20,21 @@
   }
 </style>
 
+<div class="container" style="width: 500px;">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: bands_path, method: :get, class: "d-flex gap-1" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control bg-warning bg-opacity-50 border-0",
+              placeholder: "type something..."
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary border-0" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row row-cols-2">
     <% @bands.each do |band| %>
