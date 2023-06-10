@@ -1,27 +1,51 @@
-    <div class="container text-center">
-      <div class="d-flex justify-content-between">
-        <div class="add-band-button">
-          <%= link_to "Add new band", new_band_path, class: "btn btn-warning", style: "border-radius: 10px; padding-top: 12px;" %>
-        </div>
-        <h1 class="my-bands-heading text-warning">my bands</h1>
-      </div>
-      <div class="row row-cols-3 justify-content-center card-container">
-        <% @bands.each do |band| %>
-          <div class="col">
-            <div class="card" style="width: 18rem; height: 25rem;">
-              <% if band.photos.attached? %>
-                <%= cl_image_tag (band.photos[0].key), class: "card-img img-fluid" %>
-              <% else %>
-                <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img-top">
-              <% end %>
-              <div class="card-body">
-                <h5 class="card-title"><%= band.name %></h5>
-                <p class="card-text"><%= band.description.truncate(80, separator: ' ') %></p>
-                <p class="card-price position-absolute bottom-0 start-0"><%= band.rate_fee %>$</p>
-                <%= link_to "View details", band_path(band), class: "btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+<style>
+  .card {
+    min-height: 28rem;
+  }
+
+  .card-img-container {
+    position: relative;
+    overflow: hidden;
+    height: 14rem;
+  }
+
+  .card-img-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<div class="container text-center">
+  <div class="d-flex justify-content-between">
+    <div class="add-band-button">
+      <%= link_to "Add new band", new_band_path, class: "btn btn-warning", style: "border-radius: 10px; padding-top: 12px;" %>
     </div>
+    <h1 class="my-bands-heading text-warning">my bands</h1>
+  </div>
+  <div class="row row-cols-3 justify-content-center card-container">
+    <% @bands.each do |band| %>
+      <div class="col">
+        <div class="card" style="width: 18rem; height: 25rem;">
+          <div class="card-img-container">
+            <% if band.photos.attached? %>
+              <%= cl_image_tag(band.photos[0].key, class: "card-img img-fluid") %>
+            <% else %>
+              <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img img-fluid">
+            <% end %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= band.name %></h5>
+            <p class="card-text"><%= band.description.truncate(80, separator: ' ') %></p>
+            <p class="card-price position-absolute bottom-0 start-0"><%= band.rate_fee %>$</p>
+            <%= link_to "View details", band_path(band), class: "btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
