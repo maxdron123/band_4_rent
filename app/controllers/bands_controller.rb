@@ -8,6 +8,7 @@ class BandsController < ApplicationController
 
   def show
     authorize @band
+    @checkout = Checkout.new
   end
 
   def my_bands
@@ -45,6 +46,7 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    authorize @band
     @band.destroy
     redirect_to bands_path, status: :see_other, notice: 'Band was successfully deleted!.'
   end

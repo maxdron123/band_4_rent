@@ -2,12 +2,12 @@ class BandPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      scope .all
     end
   end
 
   def show?
-    true if @user
+    true
   end
 
   def new?
@@ -15,11 +15,11 @@ class BandPolicy < ApplicationPolicy
   end
 
   def create?
-    true if @user
+    true
   end
 
   def my_bands?
-    true if @user
+    true
   end
 
   def edit?

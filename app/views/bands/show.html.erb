@@ -1,7 +1,7 @@
 
 
 
-<div class="container text" style="width: 600px;">
+<div class=" show-container container text" style="width: 600px;">
   <h1 class="text-center"><%= @band.name %></h1>
   <div class="container" style="width:600px">
   <% if @band.photos.attached? %>
@@ -27,5 +27,19 @@
   <% if policy(@band).edit? %>
   <%= link_to "Edit Band", edit_band_path(@band), class:'btn btn-primary' %>
   <% end %>
-  <div class="position-absolute bottom-0 end-0 m-3"><%= link_to "Back", bands_path, class:'btn btn-dark' %></div>
+  <div class="back-btn-show"><%= link_to "To all bands", bands_path, class:'btn btn-dark' %></div> <br>
+  <%if !@band.checkouts.present? %>
+    <div data-controller ="checkout">
+      <button class="btn", id="book-btn"
+      data-action="click->checkout#formAppear"
+      data-checkout-target="button"
+      >Rent this band!</button>
+      <span class="basket" id="checkout-form" data-checkout-target="form">
+        <%= render "checkouts/form", checkout: @checkout, band: @band %>
+      </span>
+    </div>
+  <% else %>
+    <p class="rented-btn text-center">Band successfully rented!</p>
+
+  <% end %>
 </div>
