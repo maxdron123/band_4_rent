@@ -1,0 +1,37 @@
+.show-container {
+  position: relative;
+}
+
+.back-btn-show {
+  position: absolute;
+  left: -340px;
+  top: 0px;
+}
+
+#checkout-form {
+  margin-top: 10px;
+  font-size: large;
+  color: goldenrod;
+}
+
+#book-btn {
+  color: white;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: larger;
+  width: 33vw;
+}
+
+.basket {
+  display: none;
+}
+
+.rented-btn {
+  opacity: 0.5;
+  background-color: goldenrod;
+  color: white;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: larger;
+  width: 33vw;
+}

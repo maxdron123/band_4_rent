@@ -1,0 +1,4 @@
+<%= simple_form_for [@band, @checkout] do |f| %>
+<%= f.input :booking_date, as: :date, :label =>"Choose a desired date", html5: true%>
+<%= f.submit 'Rent!', :action => :create, :method => :post, class:"btn text center w-100 text-white fw-bold" %>
+<% end %>

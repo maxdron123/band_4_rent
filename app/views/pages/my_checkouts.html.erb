@@ -1,0 +1,16 @@
+<div class="my-checkouts container">
+<h2 class="text-center">My renting requests</h2>
+  <div class="d-flex">
+    <div class="row text-center w-100"><br>
+      <div class="col-4">Name</div>
+      <div class="col-4">Rate fee</div>
+      <div class="col-4">Renting date</div>
+        <% @checkouts.each do |record| %> <br>
+          <div class="col-3 record"><%= link_to "#{record.band.name}", band_path(record.band), class:"text-decoration-none band-link" %></div>
+          <div class="col-3 record"><%= record.band.rate_fee %></div>
+          <div class="col-3 record"><%= record.booking_date %></div>
+          <div class="col-3 record"><%= link_to "Cancel", checkout_path(record), class: "btn-danger text-white",data: { turbo_method: :delete, turbo_confirm: "Cancel this request?" } %></div>
+        <% end %>
+    </div>
+  </div>
+</div>

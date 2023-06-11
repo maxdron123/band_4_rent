@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
+  get "my_checkouts", to: "pages#my_checkouts"
   get "my_bands", to: "bands#my_bands"
-  resources :bands
-  resources :checkouts, only: %i[new create destroy]
+  resources :bands do
+    resources :checkouts, only: %i[new create]
+  end
+  resources :checkouts, only: :destroy
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

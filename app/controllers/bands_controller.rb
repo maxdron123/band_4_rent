@@ -13,6 +13,7 @@ class BandsController < ApplicationController
 
   def show
     authorize @band
+    @checkout = Checkout.new
   end
 
   def my_bands
