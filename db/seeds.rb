@@ -10,6 +10,7 @@ require "open-uri"
 puts "Cleaning database"
 Band.destroy_all
 User.destroy_all
+Checkout.destroy_all
 
 puts "Creating Users"
 user1 = User.new(email: "test@test.com", password: "123456", first_name: "Max", last_name: "Dronov")
@@ -17,6 +18,9 @@ user1.save
 
 user2 = User.new(email: "test2@test.com", password: "123456", first_name: "Doyle", last_name: "Farrel")
 user2.save
+
+user3 = User.new(email: "test3@test.com", password: "123456", first_name: "Jessica", last_name: "Smith")
+user3.save
 
 # # Metallica
 # metallicaphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148706/Tuite_Metallica_ChaseCenterSF_121921-82_sja0ab.webp")
