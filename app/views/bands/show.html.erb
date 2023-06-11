@@ -1,21 +1,44 @@
-
-
+<style>
+  .carousel-item img {
+    object-fit: contain;
+    height: 300px;
+    width: 600px;
+  }
+</style>
 
 <div class=" show-container container text" style="width: 600px;">
   <h1 class="text-center"><%= @band.name %></h1>
-  <div class="container" style="width:600px">
-  <% if @band.photos.attached? %>
-
-    <div class="overflow-auto d-inline-flex" style="width:600px">
-      <% @band.photos.each do |photo|  %>
-          <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill, class: "card-img" %>
-      <% end %>
+  <div class="container" style="width: 600px;">
+    <% if @band.photos.attached? %>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% if @band.photos.size >= 1 %>
+        <% @band.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+          <%= cl_image_tag photo.key, class: "card-img" %>
+        </div>
+        <% end %>
+        <% else %>
+        <div class="carousel-item active">
+          <div class="text-center p-5" style="height: 300px; background-color: black;">
+            <span class="" style="color: white;">No photos available.</span>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
     <% else %>
-
-      <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img">
+    <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img">
     <% end %>
-
+  </div>
   <p class="mt-2"><strong>Genre:</strong> <%= @band.genre %></p>
   <p><strong>Members Count:</strong> <%= "🧍" * @band.members_count %></p>
   <p><strong>Description:</strong> <%= @band.description %></p>
@@ -27,6 +50,7 @@
   <% if policy(@band).edit? %>
   <%= link_to "Edit Band", edit_band_path(@band), class:'btn btn-primary' %>
   <% end %>
+
   <div class="back-btn-show"><%= link_to "To all bands", bands_path, class:'btn btn-dark' %></div> <br>
   <%if !@band.checkouts.present? %>
     <div data-controller ="checkout">

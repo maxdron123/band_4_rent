@@ -3,7 +3,12 @@ class BandsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @bands = policy_scope(Band).all
+      if params[:query].present?
+        @bands = policy_scope(Band).search_by_something(params[:query])
+      else
+        @bands = policy_scope(Band).all
+      end
+
   end
 
   def show
@@ -35,9 +40,11 @@ class BandsController < ApplicationController
   end
 
   def edit
+    authorize @band
   end
 
   def update
+    authorize @band
     if @band.update(band_params)
       redirect_to band_path(@band), notice: 'Band was successfully updated!'
     else
@@ -48,7 +55,7 @@ class BandsController < ApplicationController
   def destroy
     authorize @band
     @band.destroy
-    redirect_to bands_path, status: :see_other, notice: 'Band was successfully deleted!.'
+    redirect_to bands_path, status: :see_other, notice: 'Band was successfully deleted!'
   end
 
   private
