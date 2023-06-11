@@ -10,6 +10,7 @@ require "open-uri"
 puts "Cleaning database"
 Band.destroy_all
 User.destroy_all
+Checkout.destroy_all
 
 puts "Creating Users"
 user1 = User.new(email: "test@test.com", password: "123456", first_name: "Max", last_name: "Dronov")
@@ -17,6 +18,12 @@ user1.save
 
 user2 = User.new(email: "test2@test.com", password: "123456", first_name: "Doyle", last_name: "Farrel")
 user2.save
+
+user3 = User.new(email: "test3@test.com", password: "123456", first_name: "Jessica", last_name: "Smith")
+user3.save
+
+user4 = User.new(email: "test4@test.com", password: "123456", first_name: "Lamia", last_name: "Khaznadar")
+user4.save
 
 # # Metallica
 # metallicaphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148706/Tuite_Metallica_ChaseCenterSF_121921-82_sja0ab.webp")
@@ -37,26 +44,26 @@ user2.save
 # metallica.save
 
 # Imagine Dragons
-# idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686161916/imagined.jpg")
-# # idphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
-# idband = Band.new(
-#   name: "Imagine Dragons",
-#   genre: "Pop Rock",
-#   members_count: 4,
-#   description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
-#    Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
-#    exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
-#     Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
-#      'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
-#       of the year'.",
-#   rate_fee: 12_000
-# )
-# idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
-# # idband.photos.attach(io: idphoto2, filename: "imaginedragons2.png", content_type: "image/png")
-# idband.user = user1
-# idband.save
+ idphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686161916/imagined.jpg")
+  idphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149633/imagine-dragons-band-e1597672423191_oogscr.jpg")
+ idband = Band.new(
+   name: "Imagine Dragons",
+   genre: "Pop Rock",
+   members_count: 4,
+   description: "Imagine Dragons is an American pop rock band based in Las Vegas, Nevada, consisting of lead singer
+    Dan Reynolds, guitarist Wayne Sermon, bassist Ben McKee and drummer Daniel Platzman.[1] The band first gained
+    exposure with the release of their single 'It's Time', followed by their award-winning debut studio album Night
+     Visions (2012), which resulted in the chart-topping singles 'Radioactive' and 'Demons'. Rolling Stone named
+      'Radioactive', which held the record for most weeks charted on the Billboard Hot 100, the 'biggest rock hit
+       of the year'.",
+   rate_fee: 12_000
+ )
+ idband.photos.attach(io: idphoto, filename: "imaginedragons1.png", content_type: "image/png")
+  idband.photos.attach(io: idphoto2, filename: "imaginedragons2.png", content_type: "image/png")
+ idband.user = user1
+ idband.save
 
-# Skrillex
+ #Skrillex
 skrillexphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686149964/From_First_To_Last_-_Emo_Nite_2_-_PH_Carl_Pocket__cropped_nlgoko.jpg")
 skrillex = Band.new(
   name: "Skrillex",
@@ -103,5 +110,57 @@ weeknd = Band.new(
 weeknd.photos.attach(io: weekndphoto, filename: "weeknd1.png", content_type: "image/png")
 weeknd.user = user2
 weeknd.save
+
+# TheRockers
+rockersphoto = URI.open("")
+rockers = Band.new(
+  name: "The Rockers",
+  genre: "Rock",
+  members_count: 4,
+  description: "A high-energy rock band.",
+  rate_fee: 100
+)
+rockers.photos.attach(io: rockersphoto, filename: "rockers1.png", content_type: "image/png")
+rockers.user = user3
+rockers.save
+
+# TheBluesMasters
+bluesmastersphoto = URI.open("")
+bluesmasters = Band.new(
+  name: "The Blues Masters",
+  genre: "Blues",
+  members_count: 3,
+  description: "A talented blues band.",
+  rate_fee: 80
+)
+bluesmasters.photos.attach(io: bluesmastersphoto, filename: "bluesmasters1.png", content_type: "image/png")
+bluesmasters.user = user3
+bluesmasters.save
+
+# TheJazzCats
+jazzcatsphoto = URI.open("")
+jazzcats = Band.new(
+  name: "The Jazz Cats",
+  genre: "Jazz",
+  members_count: 5,
+  description: "A cool jazz ensemble.",
+  rate_fee: 120
+)
+jazzcats.photos.attach(io: jazzcatsphoto, filename: "jazzcats1.png", content_type: "image/png")
+jazzcats.user = user4
+jazzcats.save
+
+# TheFunkyGroove
+funkygroovephoto = URI.open("")
+funkygroove = Band.new(
+  name: "The Funky Groove",
+  genre: "Funk",
+  members_count: 6,
+  description: "A funky bond with a groovy sound.",
+  rate_fee: 150
+)
+funkygroove.photos.attach(io: funkygroovephoto, filename: "funkygroove1.png", content_type: "image/png")
+funkygroove.user = user4
+funkygroove.save
 
 puts "All done"
