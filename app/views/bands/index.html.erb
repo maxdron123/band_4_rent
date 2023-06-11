@@ -1,4 +1,41 @@
 
+<style>
+  .card {
+    min-height: 28rem;
+  }
+
+  .card-img-container {
+    position: relative;
+    overflow: hidden;
+    height: 14rem;
+  }
+
+  .card-img-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<div class="container" style="width: 500px;">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: bands_path, method: :get, class: "d-flex gap-1" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control bg-warning bg-opacity-50 border-0",
+              placeholder: "type something..."
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary border-0" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row row-cols-2">
     <% @bands.each do |band| %>
@@ -10,7 +47,9 @@
           <img class="h-50" src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg">
         <% end %>
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title text-center border-bottom border-1 border-warning-subtle"><%= band.name %></h5>
+          <h5 class="card-title text-center border-bottom border-1 border-warning-subtle">
+            <i class="fas fa-star"></i> <%= band.name %>
+          </h5>
           <p class="card-text text-center"><%= band.description.truncate(200, separator: ' ') %></p>
           <span class="position-absolute bottom-0 start-0">Rate Fee: $<%= band.rate_fee %></span>
           <div class="position-absolute bottom-0 end-0">

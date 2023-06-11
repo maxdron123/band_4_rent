@@ -22,8 +22,10 @@ user2.save
 user3 = User.new(email: "test3@test.com", password: "123456", first_name: "Jessica", last_name: "Smith")
 user3.save
 
+
 user4 = User.new(email: "test4@test.com", password: "123456", first_name: "Lamia", last_name: "Khaznadar")
 user4.save
+
 
 # # Metallica
 # metallicaphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686148706/Tuite_Metallica_ChaseCenterSF_121921-82_sja0ab.webp")
