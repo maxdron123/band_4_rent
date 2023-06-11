@@ -114,7 +114,8 @@ weeknd.user = user2
 weeknd.save
 
 # TheRockers
-rockersphoto = URI.open("")
+rockersphoto1 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686506692/rock_band1_idnnrj.jpg")
+rockersphoto2 = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686506692/rock_band_2_qbd0zy.jpg")
 rockers = Band.new(
   name: "The Rockers",
   genre: "Rock",
@@ -122,12 +123,13 @@ rockers = Band.new(
   description: "A high-energy rock band.",
   rate_fee: 100
 )
-rockers.photos.attach(io: rockersphoto, filename: "rockers1.png", content_type: "image/png")
+rockers.photos.attach(io: rockersphoto1, filename: "rockers1.png", content_type: "image/png")
+rockers.photos.attach(io: rockersphoto2, filename: "rockers2.png", content_type: "image/png")
 rockers.user = user3
 rockers.save
 
 # TheBluesMasters
-bluesmastersphoto = URI.open("")
+bluesmastersphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686506793/blues_band_xsuyzl.webp")
 bluesmasters = Band.new(
   name: "The Blues Masters",
   genre: "Blues",
@@ -140,7 +142,7 @@ bluesmasters.user = user3
 bluesmasters.save
 
 # TheJazzCats
-jazzcatsphoto = URI.open("")
+jazzcatsphoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686506829/jazz_band_ljtepk.jpg")
 jazzcats = Band.new(
   name: "The Jazz Cats",
   genre: "Jazz",
@@ -153,7 +155,7 @@ jazzcats.user = user4
 jazzcats.save
 
 # TheFunkyGroove
-funkygroovephoto = URI.open("")
+funkygroovephoto = URI.open("https://res.cloudinary.com/dwouepnpu/image/upload/v1686506866/funk_band_bmhybq.webp")
 funkygroove = Band.new(
   name: "The Funky Groove",
   genre: "Funk",
