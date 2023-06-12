@@ -1,6 +1,7 @@
 <style>
   .card {
     min-height: 28rem;
+
   }
 
   .card-img-container {
@@ -35,8 +36,8 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title text-center border-bottom border-1 border-warning-subtle"><%= band.name %></h5>
           <p class="card-text text-center"><%= band.description.truncate(200, separator: ' ') %></p>
-          <span class="position-absolute bottom-0 start-0">Rate Fee: $<%= band.rate_fee %></span>
-          <div class="position-absolute bottom-0 end-0">
+          <span class="position-absolute bottom-0 m-2">Rate Fee: $<%= band.rate_fee %></span>
+          <div class="position-absolute bottom-0 end-0 mb-1" style="margin-right: 25px;">
             <%= link_to "View details", band_path(band), class: "btn btn-dark" %>
           </div>
         </div>

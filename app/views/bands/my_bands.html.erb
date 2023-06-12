@@ -31,18 +31,18 @@
     <% @bands.each do |band| %>
       <div class="col">
         <div class="card" style="width: 18rem; height: 25rem;">
-          <div class="card-img-container">
+          <div class="card-img-container" style="border-top-left-radius:15%; border-top-right-radius:15%;">
             <% if band.photos.attached? %>
               <%= cl_image_tag(band.photos[0].key, class: "card-img img-fluid") %>
             <% else %>
-              <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img img-fluid">
+              <img src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685985732/band_4_rent/empty_ey7qq4.jpg" class="card-img img-fluid" style="border-top-left-radius:10%; border-top-right-radius:10%;">
             <% end %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= band.name %></h5>
             <p class="card-text"><%= band.description.truncate(80, separator: ' ') %></p>
-            <p class="card-price position-absolute bottom-0 start-0"><%= band.rate_fee %>$</p>
-            <%= link_to "View details", band_path(band), class: "btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" %>
+            <p class="card-price position-absolute bottom-0"><%= band.rate_fee %>$</p>
+            <%= link_to "View details", band_path(band), class: "btn btn-primary position-absolute bottom-0 start-50 translate-middle-x mb-1" %>
           </div>
         </div>
       </div>
