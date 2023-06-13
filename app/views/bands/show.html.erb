@@ -7,7 +7,8 @@
 </style>
 
 <div class=" show-container container text" style="width: 600px;">
-  <h1 class="text-center"><%= @band.name %></h1>
+  <h1 class="text-center">
+  <i class="fas fa-music"></i> <%= @band.name %></h1>
   <div class="container" style="width: 600px;">
     <% if @band.photos.attached? %>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
