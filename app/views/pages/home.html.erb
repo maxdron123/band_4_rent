@@ -60,8 +60,8 @@
           <div class="card-body">
             <h5 class="card-title text-center border-bottom border-1 border-warning-subtle"><%= band.name %></h5>
             <p class="card-text text-center"><%= band.description.truncate(200, separator: ' ') %></p>
-            <span class="position-absolute bottom-0 start-0">Rate Fee: $<%= band.rate_fee %></span>
-            <div class="position-absolute bottom-0 end-0">
+            <span class="position-absolute bottom-0 start-0 ms-5 mb-1">Rate Fee: $<%= band.rate_fee %></span>
+            <div class="position-absolute bottom-0 end-0 me-4 mb-1">
               <%= link_to "View details", band_path(band), class: "btn btn-dark" %>
             </div>
 
