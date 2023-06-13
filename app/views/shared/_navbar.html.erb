@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon"
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon position-relative"
 style="background-image: url('<%= src="https://res.cloudinary.com/dwouepnpu/image/upload/v1686139555/banner_cml3zz.jpg" %>'); background-size: cover; "
 >
   <div class="container-fluid">
@@ -6,11 +6,27 @@ style="background-image: url('<%= src="https://res.cloudinary.com/dwouepnpu/imag
       <img class="img" src="https://res.cloudinary.com/dwouepnpu/image/upload/v1685900797/band_4_rent/band_logo_kthaum.png" alt="">
     <% end %>
 
+    <div class="container position-absolute bottom-0 end-0" style="width: 500px;">
+        <div class="row justify-content-end">
+          <div class="col-sm-8 my-3">
+            <%= form_with url: bands_path, method: :get, class: "d-flex gap-1" do %>
+              <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control bg-warning bg-opacity-50 border-0",
+                    placeholder: "type something..."
+                %>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary border-0" %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
