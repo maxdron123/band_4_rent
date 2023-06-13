@@ -52,6 +52,7 @@
   <% end %>
 
   <div class="back-btn-show"><%= link_to "To all bands", bands_path, class:'btn btn-dark' %></div> <br>
+  <% if !policy(@band).edit? %>
   <%if !@band.checkouts.present? %>
     <div data-controller ="checkout">
       <button class="btn", id="book-btn"
@@ -64,6 +65,6 @@
     </div>
   <% else %>
     <p class="rented-btn text-center">Band successfully rented!</p>
-
+  <% end %>
   <% end %>
 </div>

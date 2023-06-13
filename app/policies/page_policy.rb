@@ -13,4 +13,8 @@ class PagePolicy < ApplicationPolicy
   def my_checkouts
     true if @user
   end
+
+  def my_notifications
+    true if @user
+  end
 end

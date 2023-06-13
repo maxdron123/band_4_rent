@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center">My notifications</h1>
+  <div class="d-flex">
+    <div class="row text-center w-100"><br>
+      <div class="col not-line">
+        <%@bands.each do |band| %>
+          <p><%=link_to band.name, band_path(band), class:"text-decoration-none band-link" %> was rented by <%= band.checkouts.first.user.first_name %> for <%=band.checkouts.first.booking_date  %>!</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
