@@ -120,7 +120,13 @@ rockers = Band.new(
   name: "The Rockers",
   genre: "Rock",
   members_count: 4,
-  description: "A high-energy rock band.",
+  description: " A high-energy rock band that electrifies the stage with their raw power and intense performances.
+  With their thundering drums, blistering guitar solos, and captivating vocals, The Rockers deliver a sonic assault
+  that leaves audiences breathless. Their music is a fusion of classic rock influences and modern sensibilities,
+  resulting in an explosive sound that grabs your attention from the first chord. Whether they're playing
+  their own original compositions or reviving beloved rock anthems, The Rockers will make you want to jump,
+   headbang, and lose yourself in the adrenaline-fueled
+   world of rock 'n' roll.",
   rate_fee: 100
 )
 rockers.photos.attach(io: rockersphoto1, filename: "rockers1.png", content_type: "image/png")
@@ -134,7 +140,12 @@ bluesmasters = Band.new(
   name: "The Blues Masters",
   genre: "Blues",
   members_count: 3,
-  description: "A talented blues band.",
+  description: "Step into a smoky, dimly lit venue and immerse yourself in the soulful sounds of The Blues Masters.
+  This exceptionally talented blues band transports you to the heart of the Mississippi Delta with their mesmerizing
+  performances. From soul-stirring guitar solos to heartfelt, whiskey-soaked vocals, every note they play resonates
+  with the passion and authenticity that define the blues. With a repertoire that spans the history of the genre,
+  The Blues Masters can take you on a journey through the emotional landscapes of love, loss, and redemption.
+  Get ready to experience the raw power and timeless beauty of the blues like never before.",
   rate_fee: 80
 )
 bluesmasters.photos.attach(io: bluesmastersphoto, filename: "bluesmasters1.png", content_type: "image/png")
@@ -147,7 +158,12 @@ jazzcats = Band.new(
   name: "The Jazz Cats",
   genre: "Jazz",
   members_count: 5,
-  description: "A cool jazz ensemble.",
+  description: "Enter a world of sophistication and smooth melodies with The Jazz Cats, a group of exceptionally
+  talented musicians dedicated to the art of jazz. With their impeccable timing, virtuosic improvisation, and infectious
+  rhythm,this cool jazz ensemble creates an ambiance that is both elegant and exhilarating. From smoky jazz clubs to
+  grand concert halls, The Jazz Cats have enchanted audiences with their diverse repertoire, ranging from classic
+  standards to contemporary interpretations. Whether you're a seasoned jazz aficionado or new to the genre, The Jazz
+  Cats will captivate you with their refined musicianship and transport you to a world of timeless cool.",
   rate_fee: 120
 )
 jazzcats.photos.attach(io: jazzcatsphoto, filename: "jazzcats1.png", content_type: "image/png")
@@ -160,7 +176,12 @@ funkygroove = Band.new(
   name: "The Funky Groove",
   genre: "Funk",
   members_count: 6,
-  description: "A funky bond with a groovy sound.",
+  description: "Brace yourself for a dance-inducing, booty-shaking experience with The Funky Groove, a band that knows
+  how to get the party started. With their irresistible blend of funk, soul, and infectious grooves, this dynamic group
+  brings the funk to any stage they grace. The Funky Groove's tight rhythm section lays down a solid foundation while
+  the horn section blares out catchy melodies that make you want to move. Their charismatic frontperson commands
+  the stage, urging the audience to let loose and embrace the funky vibes. Get ready to unleash your inner groove and
+  surrender to the irresistible rhythm that defines The Funky Groove.",
   rate_fee: 150
 )
 funkygroove.photos.attach(io: funkygroovephoto, filename: "funkygroove1.png", content_type: "image/png")
