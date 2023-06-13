@@ -31,4 +31,66 @@
   color: goldenrod;
   font-size: large;
   font-weight: bold;
+  margin-right: 10px;
+}
+
+.notification {
+  position: absolute;
+  top: 32px;
+  right: 65px;
+  font-weight: 600;
+  background-color: goldenrod;
+  border-radius: 7%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+}
+
+.notification .msg {
+  margin-top: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+#messages {
+  opacity: 1;
+  color: goldenrod;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  cursor: not-allowed;
+  border-radius: 50%;
+  border: 2px solid #444;
+  box-shadow: -2.5px -2.5px 2.5px #6359f8, 0px -2.5px 2.5px 0px #9c32e2,
+    2.5px -2.5px 2.5px #f36896, 2.5px 0 2.5px #ff0b0b,
+    2.5px 2.5px 2.5px 0px#ff5500, 0 2.5px 2.5px 0px #ff9500,
+    -2.5px 2.5px 2.5px 0px #ffb700;
+  animation: rot55 0.7s linear infinite;
+}
+
+.spinnerin {
+  border: 2px solid #444;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rot55 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.badge {
+  position: relative;
+  top: -45px;
+  right: 10px;
 }

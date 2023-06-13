@@ -1,0 +1,7 @@
+<div class="notification text-center">
+  <% current_user.bands.each do |band| %>
+    <% if Checkout.find_by(band_id: band.id) %>
+      <%= link_to "Your band was rented!", my_notifications_path, class:" msg text-decoration-none text-white border-bottom border-white"%> <br>
+    <% end %>
+  <% end %>
+</div>

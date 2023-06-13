@@ -17,7 +17,14 @@ style="background-image: url('<%= src="https://res.cloudinary.com/dwouepnpu/imag
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <div data-controller ="notification">
+              <button class= "nav-link" id="messages"
+              data-action="click->notification#notice"
+              > Notifications
+              </button>
+              <span data-notification-target ="spinner"><%= render "shared/spinner" %></span>
+              <span class="hide" data-notification-target ="list"><%= render "shared/notification" %></span>
+            </div>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -9,6 +9,11 @@ class PagesController < ApplicationController
     @checkouts = @user.checkouts
   end
 
+  def my_notifications
+    @user = current_user
+    @bands = @user.bands.select { |band| band if band.checkouts.present? }
+  end
+
   def about
   end
 end
