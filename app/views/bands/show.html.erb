@@ -55,7 +55,7 @@
   <div class="back-btn-show"><%= link_to "To all bands", bands_path, class:'btn btn-dark' %></div> <br>
   <%if !@band.checkouts.present? %>
     <div data-controller ="checkout">
-      <button class="btn", id="book-btn"
+      <button class="btn mb-5", id="book-btn"
       data-action="click->checkout#formAppear"
       data-checkout-target="button"
       >Rent this band!</button>

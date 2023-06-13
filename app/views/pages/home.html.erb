@@ -1,6 +1,7 @@
 <style>
   .card {
     min-height: 28rem;
+
   }
 
   .card-img-container {
@@ -11,12 +12,30 @@
 
   .card-img-container img {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: auto;
     height: 100%;
     object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .card-title {
+    margin-top: 2.21rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-text {
+    margin-top: 0.618rem;
+    margin-bottom: 0.618rem;
   }
 </style>
 
@@ -39,10 +58,11 @@
           <span class="position-absolute bottom-0 start-0">Rate Fee: $<%= band.rate_fee %></span>
           <div class="position-absolute bottom-0 end-0">
             <%= link_to "View details", band_path(band), class: "btn btn-dark" %>
+
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
