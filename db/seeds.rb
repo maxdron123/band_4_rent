@@ -13,7 +13,7 @@ User.destroy_all
 Checkout.destroy_all
 
 puts "Creating Users"
-user1 = User.new(email: "test@test.com", password: "123456", first_name: "Max", last_name: "Dronov")
+user1 = User.new(email: "test@test.com", password: "123456", first_name: "Barry", last_name: "Barnson")
 user1.save
 
 user2 = User.new(email: "test2@test.com", password: "123456", first_name: "Doyle", last_name: "Farrel")
